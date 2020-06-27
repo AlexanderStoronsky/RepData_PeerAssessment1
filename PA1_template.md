@@ -45,7 +45,7 @@ sum<-df %>%
 hist(sum$total_steps)
 ```
 
-![](PA1_template_files/figure-html/histogram of the total number of steps-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_of_the_total_number_of_steps-1.png)
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
@@ -78,7 +78,7 @@ mean_interval<-df %>%
 plot(mean_interval,type = 'l')
 ```
 
-![](PA1_template_files/figure-html/average daily activity time series plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/average_daily_activity_time_series_plot-1.png)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -126,7 +126,7 @@ sum1<-df1 %>%
 hist(sum1$total_steps)
 ```
 
-![](PA1_template_files/figure-html/histogram with simulated data-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_with_simulated_data-1.png)
 
 ```r
 #mean
@@ -151,7 +151,7 @@ print(median(sum1$total_steps,na.rm = T))
 
 1. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using **simulated data**:
 
-![Sample panel plot](instructions_fig/sample_panelplot.png) 
+![sample panel plot](instructions_fig/sample_panelplot.png) 
 
 
 ```r
@@ -173,5 +173,5 @@ qplot(interval, mean_steps, data = mean_interval2, colour = weekday)+
   geom_line() + facet_wrap(~weekday,nrow = 2)
 ```
 
-![](PA1_template_files/figure-html/panel plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/panel_plot-1.png)
 final panel plot

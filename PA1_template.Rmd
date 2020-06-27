@@ -19,7 +19,7 @@ sum<-df %>%
 ## What is mean total number of steps taken per day?
 
 1. Make a histogram of the total number of steps taken each day
-```{r histogram of the total number of steps}
+```{r histogram_of_the_total_number_of_steps}
 hist(sum$total_steps)
 ```
 
@@ -33,7 +33,7 @@ print(median(sum$total_steps,na.rm = T))
 
 ## What is the average daily activity pattern?
 1. Make a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{r average daily activity time series plot}
+```{r average_daily_activity_time_series_plot}
 mean_interval<-df %>%
   group_by(interval) %>%
   summarise(mean_steps = mean(steps,na.rm = T))
@@ -64,7 +64,7 @@ df1$steps <- ifelse( is.na(df1$steps), round(mean_interval$mean_steps[which(mean
 ```
 4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r histogram with simulated data}
+```{r histogram_with_simulated_data}
 sum1<-df1 %>% 
   group_by(date) %>%
   summarise(total_steps = sum(steps, na.rm = F))
@@ -87,7 +87,7 @@ Sys.setlocale("LC_TIME", "English")
 library(ggplot2)
 ```
 
-```{r panel plot, fig.height=4}
+```{r panel_plot, fig.height=4}
 df2<-df1
 df2$date <- as.Date(df2$date) 
 df2$weekday <- ifelse(weekdays(df2$date) %in% c("Saturday","Sunday"),as.character("weekend"), as.character("weekday"))
